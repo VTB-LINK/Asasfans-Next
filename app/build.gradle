@@ -87,7 +87,6 @@ dependencies {
 
     implementation('com.github.arcadefire:nice-spinner:1.4.4')
     implementation('com.github.zaaach:TabRadioButton:1.0.2')
-    implementation('com.contrarywind:Android-PickerView:4.1.9')
     implementation(name:'floatserver-debug', ext:'aar')
 
     implementation 'com.kyleduo.switchbutton:library:2.1.0'
