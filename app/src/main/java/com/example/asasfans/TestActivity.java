@@ -195,7 +195,7 @@ public class TestActivity extends AppCompatActivity {
         newBottomPagerAdapter = new NewBottomPagerAdapter(this);
         viewPager = findViewById(R.id.vp_content);
         viewPager.setAdapter(newBottomPagerAdapter);
-        viewPager.setOffscreenPageLimit(5);
+        viewPager.setOffscreenPageLimit(6);
         viewPager.setUserInputEnabled(false);
         configureDrawerNavigation();
 
@@ -337,6 +337,8 @@ public class TestActivity extends AppCompatActivity {
             int itemId = item.getItemId();
             if (itemId == R.id.nav_video) {
                 selectPage(0);
+            } else if (itemId == R.id.nav_dynamics) {
+                selectPage(6);
             } else if (itemId == R.id.nav_music) {
                 selectPage(1);
             } else if (itemId == R.id.nav_tools) {
@@ -390,9 +392,12 @@ public class TestActivity extends AppCompatActivity {
         } else if (position == 5) {
             navigationView.setCheckedItem(R.id.nav_lists);
             topAppBar.setTitle(R.string.nav_lists);
+        } else if (position == 6) {
+            navigationView.setCheckedItem(R.id.nav_dynamics);
+            topAppBar.setTitle(R.string.nav_dynamics);
         }
-        // 音乐和日历是直属 WebFragment，显示主 Toolbar 的网页操作按钮。
-        updateWebActionVisibility(position == 1 || position == 3);
+        // 音乐、日历和动态是直属 WebFragment，显示主 Toolbar 的网页操作按钮。
+        updateWebActionVisibility(position == 1 || position == 3 || position == 6);
     }
 
     private void updatePlaybackModeMenuItem() {

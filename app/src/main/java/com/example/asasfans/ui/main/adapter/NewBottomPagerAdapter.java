@@ -14,10 +14,10 @@ import com.example.asasfans.ui.main.fragment.WebFragment;
 
 /**
  * @author LEN5010
- * @description 主框架页面 Adapter，承载视频、音乐、工具、日历、账号和名单管理页面。
+ * @description 主框架页面 Adapter，承载视频、音乐、工具、日历、账号、名单管理和动态页面。
  */
 public class NewBottomPagerAdapter extends FragmentStateAdapter {
-    private static final int TAB_COUNT = 6;
+    private static final int TAB_COUNT = 7;
     private static Object currentFragment;
 
     public NewBottomPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
@@ -40,6 +40,8 @@ public class NewBottomPagerAdapter extends FragmentStateAdapter {
                 return BiliAccountFragment.newInstance();
             case 5:
                 return BlacklistFragment.newInstance();
+            case 6:
+                return WebFragment.newInstance("https://len5010.top/dynamics/", true);
             default:
                 return NullFragment.newInstance();
         }
